@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Create New Plant</title>
+</head>
+<body>
+    <div align="center">
+        <h1>Create New Plant</h1>
+        <br />
+        <form action="#" th:action="@{/save}" th:object="${plant}" method="post">
+ 			
+ 			<table class="database-plant-table">
+ 				<thead>
+ 					<tr>
+						<th>Name</th>
+						<th>Species</th>
+						<th>Light Level</th>
+						<th>Water Level</th>
+						<th>Soil Type</th>
+						<th>Temperature</th>
+						<th>Humidity</th>
+ 					</tr>
+ 				</thead>
+ 				<tbody>
+ 					<tr>
+ 						<td></td>
+ 					</tr>
+ 				</tbody>
+ 			</table>
+ 			
+ 			
+            <table border="0" cellpadding="10">
+                <tr>
+                    <td>Plant Name:</td>
+                    <td><input type="text" th:field="*{name}" /></td>
+                </tr>
+                <tr>             
+                    <td>Plant Species:</td>
+                    <td>
+                        <input type="text" th:field="*{species}" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Light Level:</td>
+                    <td><input type="text" th:field="*{light}" /></td>
+                </tr>
+                <tr>
+                    <td>Water Level:</td>
+                    <td><input type="text" th:field="*{water}" /></td>
+                </tr>
+                <tr>
+                    <td>Soil Type:</td>
+                    <td><input type="text" th:field="*{soil}" /></td>
+                </tr>  
+                <tr>
+                    <td>Temperature:</td>
+                    <td><input type="text" th:field="*{temperature}" /></td>
+                </tr>   
+                <tr>
+                    <td>Humidity:</td>
+                    <td><input type="text" th:field="*{humidity}" /></td>
+                </tr>                         
+                <tr>
+                    <td colspan="2">
+                    	<button type="submit">Save</button>
+                    	<a href="/users">Cancel</a> 
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    
+<!-- FOOTER -->
+	<div class="site-footer">
+		<div class=footer-container>
+			<a href="/users">Home</a>
+		</div>
+		<div class=footer-container>
+			<a href="/about">About</a>
+		</div>
+		<div class=footer-container>
+			<a href="/contact">Contact</a>
+		</div>
+	</div>
+
+</body>
+</html>

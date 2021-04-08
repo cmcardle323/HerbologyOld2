@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>List Users</title>
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+<script type="text/javascript"
+	src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<!-- HEADER -->
+	<div class=site-header>
+		<div class="site-logo-container">
+			<div class="logo-image-container">
+				<img id="site-logo-img" src="images/site-logo.png">
+			</div>
+			<p id="site-title">erbology!</p>
+		</div>
+		<div class="welcome-msg">
+			<h2>Welcome back, <b>[[${#request.userPrincipal.principal.fullName}]]</b>!</h2>
+		</div>
+		<div class="budge">
+			<form th:action="@{/logout}" method="post">
+				<input type="submit" value="Sign Out" />
+			</form>		
+		</div>
+	</div>
+
+	<!-- BODY -->
+	<!-- User Info -->
+	<div class="site-content-area">
+
+
+		<!-- Tracked Info -->
+		<div class="plant-table-area">
+			<h1 class='table-title'>Your Tracked Plants:</h1>
+			<div>
+				<table id="plant-table">
+					<thead>
+						<tr>
+							<th>View:</th>
+							<th>Name:</th>
+							<th>Light Level:</th>
+							<th>Water Cycle:</th>
+							<th>Actions:</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="plant : ${listUsersPlants}">
+							<td><a th:href="${'/plant/' + plant.id}">View</a></td>
+							<td th:text="${plant.name}">Name</td>
+							<td th:text="${plant.light}">Light Level</td>
+							<td th:text="${plant.water}">Water Cycle</td>
+							<td><a th:href="${'/delete/' + plant.id + '/' + username}">Remove</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<!-- Database Info -->
+		<div class="database-plant-table-area">
+			<h1 class='table-title'>Plant Database:</h1>
+			<div>
+				<a href="/new"><input type="submit" value="Add New Plant" /></a>
+			</div>
+			<div>
+				<table id="plant-table">
+					<thead>
+						<tr>
+							<th>View:</th>
+							<th>Name:</th>
+							<th>Light Level:</th>
+							<th>Water Cycle:</th>
+							<th>Soil Type:</th>
+							<th>Temperature:</th>
+							<th>Humidity:</th>
+							<th>Actions:</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="plant : ${listPlants}">
+							<td><a th:href="${'/plant/' + plant.id}">View</a></td>
+							<td th:text="${plant.name}">Name</td>
+							<td th:text="${plant.light}">Light Level</td>
+							<td th:text="${plant.water}">Water Cycle</td>
+							<td th:text="${plant.soil}">Soil Type</td>
+							<td th:text="${plant.temperature}">Temperature</td>
+							<td th:text="${plant.humidity}">Humidity</td>
+							<td><a th:href="${'/edit/' + plant.id}">Edit</a>
+								&nbsp;&nbsp;&nbsp; <a
+								th:href="${'/track/' + plant.id + '/' + username}">Track</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<!-- FOOTER -->
+	<div class="site-footer">
+		<div class=footer-container>
+			<a href="/users">Home</a>
+		</div>
+		<div class=footer-container>
+			<a href="/about">About</a>
+		</div>
+		<div class=footer-container>
+			<a href="/contact">Contact</a>
+		</div>
+
+	</div>
+</body>
+</html>

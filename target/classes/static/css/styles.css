@@ -1,0 +1,144 @@
+/*All*/
+.debug {
+	border: solid red 1px;
+}
+
+body {
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+	background-image: url('https://d2gg9evh47fn9z.cloudfront.net/thumb_COLOURBOX7450013.jpg');
+	height: 100vh;
+	width: 100vw;
+}
+
+/*HEADER*/
+.site-header{
+	display: flex;
+	justify-content: space-between;
+	top: 0;
+	background-color: #246933;
+	width: 100%;
+	height: 90px;
+	border-radius: 0px 0px 10px 10px;
+	border: solid #22391c 2px;
+	position: fixed;
+	align-items: center;
+}
+
+.site-logo-container {
+	display: flex;
+	margin-left: 1%;
+	height: 80px;
+	width: 80px;
+	background-color: white;
+	border-radius: 50px;
+	align-items: center;	
+}
+
+.welcome-msg {
+	color: white;
+}
+
+#site-logo-img {
+	height: 80px;
+	width: 80px;
+	margin: auto;
+}
+
+.budge {
+	margin-right: 10px;
+}
+
+#site-title {
+	color: white;
+	height: 100%;
+	width: 265px;
+	margin-top: 75px;
+	margin-left: 2px;
+	font-size: 50pt;
+}
+
+/*BODY*/
+.site-content-area {
+	display: flex;
+	width: 100%;
+	height: 80%;
+	top: 140px;
+	position: relative;
+	justify-content: space-around;
+	position: fixed;
+}
+
+.table-title{
+	color: white;
+}
+
+#button-container {
+	padding: 25px;
+}
+
+/* YOUR TABLE*/
+.plant-table-area {
+	text-align: center;
+	border: solid #22391c 2px;
+	width: 41%;
+	height: 100%;
+	justify-content: center;
+	align-items:center;
+	background-color: #50a645;
+	border-radius: 50px;
+}
+
+#plant-table {
+	border: solid #22391c 2px;
+	background-color: white;
+	border-collapse: collapse;
+	height: 100%;
+  	width: 100%;
+  	display:block;
+    overflow-y:auto;
+}
+
+#plant-table td, #plant-table th {
+	border: 1px solid #ddd;
+ 	padding: 8px;
+}
+
+#plant-table thead th {
+	background: #eee;
+	position: sticky;
+	top: 0;
+}
+
+/*DB TABLE*/
+.database-plant-table-area {
+	text-align: center;
+	width: 55%;
+	height: 100%;
+	justify-content: center;
+	align-items:center;
+	background-color: #50a645;
+	border-radius: 50px;
+	border: solid #22391c 2px;
+}
+
+.table-footer{
+	height: 50px;
+}
+
+
+/*FOOTER*/
+.site-footer {
+	color: white;
+	font-size: 200%;
+	display: flex;
+	justify-content: space-around;
+	bottom: 0;
+	background-color: #246933;
+	width: 100%;
+	height: 90px;
+	border-radius: 10px 10px 0px 0px;
+	border: solid #22391c 2px;
+	position: fixed;
+}

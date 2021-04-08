@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Plant Info</title>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+</head>
+<body>
+
+<h1>Plant Info:</h1>
+<h1 th:text="${plant.name}"></h1>
+<p th:text="${plant.id}"></p>
+<p th:text="${plant.species}"></p>
+<p th:text="${plant.light}"></p>
+<p th:text="${plant.water}"></p>
+<p th:text="${plant.soil}"></p>
+<p th:text="${plant.temperature}"></p>
+<p th:text="${plant.humidity}"></p>
+
+
+<!-- FOOTER -->
+<div class="site-footer">
+	<div class=footer-container>
+		<a href="/users">Home</a>
+	</div>
+	<div class=footer-container>
+		<a href="/about">About</a>
+	</div>
+	<div class=footer-container>
+		<a href="/contact">Contact</a>
+	</div>
+</div>
+</body>
+</html>
